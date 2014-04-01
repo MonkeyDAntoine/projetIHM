@@ -10,7 +10,6 @@ public class NoteApp implements EntryPoint {
   /**
    * This is the entry point method.
    */
-  public void onModuleLoad() {
-
-  }
+	public void onModuleLoad() {
+	}
 }
