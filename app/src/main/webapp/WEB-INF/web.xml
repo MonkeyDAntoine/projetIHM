@@ -4,12 +4,20 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>ListenProfService</servlet-name>
+		<servlet-class>com.ihm.project.app.server.ListenProfServiceImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListenProfService</servlet-name>
+		<url-pattern>/NoteApp/listenProf</url-pattern>
+	</servlet-mapping>
 
-  <!-- Servlets -->
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>NoteApp.html</welcome-file>
+	</welcome-file-list>
 
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>NoteApp.html</welcome-file>
-  </welcome-file-list>
 
 </web-app>

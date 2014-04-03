@@ -1,35 +1,36 @@
 package com.ihm.project.app.client.view;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasText;
+import com.google.gwt.user.client.ui.HasHTML;
 import com.google.gwt.user.client.ui.RichTextArea;
 import com.google.gwt.user.client.ui.Widget;
 import com.ihm.project.app.client.presenter.IndexPresenter;
 
 public class IndexView extends Composite implements IndexPresenter.Display {
 
-	private static IndexViewUiBinder uiBinder = GWT
-			.create(IndexViewUiBinder.class);
-
-	interface IndexViewUiBinder extends UiBinder<Widget, IndexView> {
-	}
+//	private static IndexViewUiBinder uiBinder = GWT
+//			.create(IndexViewUiBinder.class);
+//
+//	interface IndexViewUiBinder extends UiBinder<Widget, IndexView> {
+//	}
 
 	public IndexView() {
-		initWidget(uiBinder.createAndBindUi(this));
+		// initWidget(uiBinder.createAndBindUi(this));
+		this.whatDoesTheProfSay = new RichTextArea();
+		super.initWidget(this.whatDoesTheProfSay);
 	}
 	
-	private RichTextArea whatDoesTheProfSay;
+	// @UiField
+	private final RichTextArea whatDoesTheProfSay;
 
 	@Override
 	public Widget getProfSpeechWidget() {
-		return whatDoesTheProfSay;
+		return this.whatDoesTheProfSay;
 	}
 
 	@Override
-	public HasText getProfSpeechText() {
-		return whatDoesTheProfSay;
+	public HasHTML getProfSpeechText() {
+		return this.whatDoesTheProfSay;
 	}
 
 	
