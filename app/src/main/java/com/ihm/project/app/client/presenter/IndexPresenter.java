@@ -1,5 +1,7 @@
 package com.ihm.project.app.client.presenter;
 
+import java.util.List;
+
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -36,19 +38,20 @@ public class IndexPresenter implements Presenter {
 	}
 
 	private void listen() {
-		this.listenProfService.listen(new AsyncCallback<String>() {
-
-			@Override
-			public void onSuccess(final String arg0) {
-				listen();
-				IndexPresenter.this.view.getProfSpeechText().setHTML(
-						IndexPresenter.this.view.getProfSpeechText().getText()
-								+ arg0);
-			}
+		this.listenProfService.listen(new AsyncCallback<List<String>>() {
 
 			@Override
 			public void onFailure(final Throwable arg0) {
 				Window.alert(arg0.getMessage());
+			}
+
+			@Override
+			public void onSuccess(final List<String> result) {
+				listen();
+				if (result.size() > 0)
+					IndexPresenter.this.view.getProfSpeechText().setHTML(
+							IndexPresenter.this.view.getProfSpeechText()
+									.getText() + result.get(result.size() - 1));
 			}
 		});
 	}
