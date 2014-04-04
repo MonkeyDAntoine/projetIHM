@@ -51,7 +51,7 @@ public class IndexPresenter implements Presenter {
 				if (result.size() > 0)
 					IndexPresenter.this.view.getProfSpeechText().setHTML(
 							IndexPresenter.this.view.getProfSpeechText()
-									.getText() + result.get(result.size() - 1));
+									.getText() + result.get(0));
 			}
 		});
 	}

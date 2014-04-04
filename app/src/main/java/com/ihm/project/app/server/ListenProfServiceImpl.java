@@ -36,11 +36,7 @@ public class ListenProfServiceImpl extends RemoteServiceServlet implements
 		this.microphone.close();
 
 		GoogleResponse responses = this.recognizer
-				.getRecognizedDataForFlac(this.microphone.getAudioFile());
-		System.out.println(this.microphone.getAudioFile().getAbsolutePath());
-		for (String rep : responses.getAllPossibleResponses()) {
-			System.out.println(rep);
-		}
+				.getRecognizedDataForWave(this.microphone.getAudioFile());
 		return responses.getAllPossibleResponses();
 	}
 
