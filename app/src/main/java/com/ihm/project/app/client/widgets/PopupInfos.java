@@ -1,15 +1,26 @@
 package com.ihm.project.app.client.widgets;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 
 public class PopupInfos extends PopupPanel {
 
-	private String infos;
+	private final List<Label> infos;
+	private final FlowPanel container;
 
-	public PopupInfos(final String infos) {
+	public PopupInfos() {
+		this.infos = new ArrayList<Label>();
+		this.container = new FlowPanel();
 		initPopup();
-		this.setInfo(infos);
+	}
+
+	public PopupInfos(final String tooltipInfos) {
+		this();
+		addTooltipInfos(tooltipInfos);
 	}
 
 	private void initPopup() {
@@ -17,11 +28,13 @@ public class PopupInfos extends PopupPanel {
 		this.setAutoHideEnabled(true);
 		this.setHeight("100px");
 		this.setWidth("200px");
+		this.add(this.container);
 	}
 
-	private void setInfo(final String infos){
-		this.infos = infos;
-		this.add(new Label(infos));
+	public void addTooltipInfos(final String text) {
+		Label toAdd = new Label(text);
+		this.infos.add(toAdd);
+		this.container.add(toAdd);
 	}
 
 }

@@ -58,17 +58,20 @@ public class TagCloud extends Composite {
 	 * 
 	 * @param word
 	 */
-	public void addWord(final WordTag word) {
+	public void addWord(final WordTag word, final String tooltipDescription) {
 		boolean exist = false;
 		for (Tag t : tags) {
 			if (((WordTag) t).getWord().getText()
 					.equalsIgnoreCase(word.getWord().getText())) {
 				t.increaseNumberOfOccurences();
+				((WordTag) t).refreshTooltip(tooltipDescription);
 				exist = true;
 			}
 		}
-		if (!exist)
+		if (!exist) {
 			tags.add(word);
+			word.refreshTooltip(tooltipDescription);
+		}
 		refresh();
 	}
 
