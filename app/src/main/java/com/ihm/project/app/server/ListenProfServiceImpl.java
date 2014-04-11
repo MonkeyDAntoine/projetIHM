@@ -14,10 +14,22 @@ import com.darkprograms.speech.recognizer.Recognizer.Languages;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.ihm.project.app.client.service.ListenProfService;
 
-@SuppressWarnings("serial")
 public class ListenProfServiceImpl extends RemoteServiceServlet implements
 		ListenProfService {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8889019384551833295L;
+
+	/**
+	 * 
+	 */
 	private final Microphone microphone;
+
+	/**
+	 * 
+	 */
 	private final Recognizer recognizer;
 
 	public ListenProfServiceImpl() {

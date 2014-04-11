@@ -1,11 +1,7 @@
-<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<!-- <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent"> -->
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
-	<ui:style>
-
-	</ui:style>
-	<h1>Index</h1>
-	<g:HTMLPanel>
-	<g:RichTextArea ui:field="whatDoesTheProfSay"></g:RichTextArea>	
-	</g:HTMLPanel>
+	<g:FlowPanel ui:field="container">
+	<g:RichTextArea ui:field="whatDoesTheProfSay"/>
+	</g:FlowPanel>
 </ui:UiBinder> 
