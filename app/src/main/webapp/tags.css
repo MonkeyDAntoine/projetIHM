@@ -1,0 +1,127 @@
+@external .gwt-Label;
+
+div.gwt-Label {
+	display: inline-block;
+	padding: 5px;
+}
+
+div.gwt-Label.tag {
+	text-decoration: none;
+	color: #000000;
+	font-family: Verdana, Arial, serif, sans-serif;
+}
+
+div.gwt-Label:hover{
+	text-decoration: underline;
+}
+
+div.gwt-Label.tag1 {
+	font-size: 0.7em;
+	font-weight: 100;
+}
+
+div.gwt-Label.tag2 {
+	font-size: 0.8em;
+	font-weight: 200;
+}
+
+div.gwt-Label.tag3 {
+	font-size: 0.9em;
+	font-weight: 300;
+}
+
+div.gwt-Label.tag4{
+	font-size: 1.0em;
+	font-weight: 400;
+}
+
+div.gwt-Label.tag5 {
+	font-size: 1.2em;
+	font-weight: 500;
+}
+
+div.gwt-Label.tag6 {
+	font-size: 1.4em;
+	font-weight: 600;
+}
+
+div.gwt-Label.tag7 {
+	font-size: 1.6em;
+	font-weight: 700;
+}
+
+div.gwt-Label.tag8 {
+	font-size: 1.8em;
+	font-weight: 800;
+}
+
+div.gwt-Label.tag9 {
+	font-size: 2.2em;
+	font-weight: 900;
+}
+
+div.gwt-Label.tag10 {
+	font-size: 2.5em;
+	font-weight: 900;
+}
+
+div.gwt-Label.red {
+	color: #EE0000;
+}
+
+div.gwt-Label.green {
+	color: #69CE00;
+}
+
+div.gwt-Label.blue {
+	color: #007CFF;
+}
+
+div.gwt-Label.lightblue {
+	color: #00C2EC;
+}
+
+div.gwt-Label.orange {
+	color: #FF9B00;
+}
+
+div.gwt-Label.pink {
+	color: #FF04DA;
+}
+
+div.gwt-Label.brown {
+	color: #A57100;
+}
+
+div.gwt-Label.purple {
+	color: #9A00CE;
+}
+
+div.gwt-Label.black {
+	color: #000000;
+}
+
+div.gwt-Label.white {
+	color: #FFFFFF;
+}
+
+div.gwt-Label.lightgrey {
+	color: #CCCCCC;
+}
+
+div.gwt-Label.grey {
+	color: #999999;
+}
+
+div.gwt-Label.darkgrey {
+    color: #666666;
+}
+
+div.gwt-Label.verticalL {
+	writing-mode: tb-rl;
+    filter: flipV() flipH();
+}
+
+div.gwt-Label.verticalR {
+	writing-mode: tb-rl;
+}
