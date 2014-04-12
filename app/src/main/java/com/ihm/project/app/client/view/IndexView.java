@@ -1,6 +1,8 @@
 package com.ihm.project.app.client.view;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Style.BorderStyle;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
@@ -20,6 +22,12 @@ public class IndexView extends Composite implements IndexPresenter.Display {
 	interface IndexViewUiBinder extends UiBinder<Widget, IndexView> {
 	}
 
+	@UiField
+	FlowPanel richTextContainer;
+
+	@UiField
+	FlowPanel tagCloudContainer;
+
 	private RichTextToolbar richTextToolbar;
 
 	private RichTextArea richTextArea;
@@ -34,24 +42,25 @@ public class IndexView extends Composite implements IndexPresenter.Display {
 
 	}
 
-	@UiField
-	FlowPanel container;
-
 	private void addRichTextArea() {
 		richTextArea = new RichTextArea();
-		richTextArea.setSize("100%", "14em");
+		richTextArea.setWidth("1000px");
+		richTextArea.getElement().getStyle().setBackgroundColor("white");
+		richTextArea.getElement().getStyle().setBorderColor("black");
+		richTextArea.getElement().getStyle().setBorderWidth(1, Unit.PX);
+		richTextArea.getElement().getStyle().setBorderStyle(BorderStyle.SOLID);
 		richTextToolbar = new RichTextToolbar(richTextArea);
 		richTextToolbar.setWidth("100%");
 		 Grid grid = new Grid(2, 1);
 	    grid.setStyleName("cw-RichText");
 	    grid.setWidget(0, 0, richTextToolbar);
 	    grid.setWidget(1, 0, richTextArea);
-		this.container.add(grid);
+		this.richTextContainer.add(grid);
 	}
 
 	private void addTagCloud() {
 		tagCloud = new TagCloud();
-		this.container.add(tagCloud);
+		this.tagCloudContainer.add(tagCloud);
 	}
 
 	@Override

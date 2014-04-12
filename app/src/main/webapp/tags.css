@@ -12,7 +12,8 @@ div.gwt-Label.tag {
 }
 
 div.gwt-Label:hover{
-	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
 }
 
 div.gwt-Label.tag1 {
